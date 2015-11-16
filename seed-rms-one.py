@@ -8,6 +8,7 @@ def getToken():
 	headers = {'Authorization':'Basic mTpzZWNyZXQ='}
 	payload = {'username': 'rmsUser', 'password': 'P@ssword1', 'grant_type':'password', 'tenant': 'rms'}
 	response = requests.post('http://localhost:8080/tokens', data = payload, headers = headers)
+	print(response)
 	if response.status_code == 201:
 		return response.json()["access_token"]
 
